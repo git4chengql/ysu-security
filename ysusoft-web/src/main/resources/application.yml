@@ -1,0 +1,28 @@
+#Mysql属性配置文件,Spring-boot系统配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zhzl
+    username: root
+    password: root
+
+#配置自动建表：updata:没有表新建，有表更新操作,控制台显示建表语句
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+security:
+  basic:
+    enabled: true
+#系统配置
+ysusoft:
+  #自定义登录页
+  loginPage: /authentication/require
+  #自定义登录处理相应地址
+  loginURL: /login.do
+  #提示信息
+  i18N:
+    login_success: 登录成功!
+    login_failure: 登录失败!
+  #登录成功或失败后的跳转方式设定
+  loginType: REDIRECT
