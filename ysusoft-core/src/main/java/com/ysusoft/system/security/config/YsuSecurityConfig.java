@@ -93,7 +93,7 @@ public class YsuSecurityConfig extends WebSecurityConfigurerAdapter {
                      .userDetailsService(userDetailsService)
                      .and()
                  .authorizeRequests()
-                 .antMatchers(systemProperties.getLoginPage(),"/system/verifycode.html","/login.html","/getsmscode")
+                 .antMatchers(systemProperties.getLoginPage(),"/code/image","/login.html","/code/sms","/swagger-ui.html")
                  .permitAll()
                  .anyRequest()
                  .authenticated()

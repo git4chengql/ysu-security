@@ -22,7 +22,7 @@
         </div>
         <!--记住我功能，暂时屏蔽验证码-->
         <div class="row">
-            <div class="col-md-1">验证码</div><div class="col-md-2"><input type="text" name="code"></div><div class="col-md-3"><img src="/system/verifycode.html"></div>
+            <div class="col-md-1">验证码</div><div class="col-md-2"><input type="text" name="code"></div><div class="col-md-3"><img src="/code/image"></div>
         </div>
         <div class="row">
             <div class="col-md-1">记住我</div><div class="col-md-2"><input type="checkbox" name="remember-me"></div>
@@ -38,7 +38,7 @@
     </div>
     <form action="/smscode/login.do" method="post">
         <div class="row">
-            <div class="col-md-1">手机号:</div><div class="col-md-2">  <input type="text" name="mobile" readonly value="17703217237"></div><div class="col-md-2"><a href="/getsmscode?mobile=17703217237">发送验证码</a></div>
+            <div class="col-md-1">手机号:</div><div class="col-md-2">  <input type="text" name="mobile" readonly value="17703217237"></div><div class="col-md-2"><a href="/code/sms?mobile=17703217237">发送验证码</a></div>
         </div>
         <div class="row">
             <div class="col-md-1">验证码:</div><div class="col-md-4"><input type="text" name="cmscode"></div>

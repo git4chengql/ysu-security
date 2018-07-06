@@ -24,10 +24,9 @@ import java.io.IOException;
  * @author chengql
  * @create 2018-01-04 上午9:41
  * 默认处理类
- *  1.登录处理
  **/
 @RestController
-public class DefaultController {
+public class ValidateCodeController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -40,7 +39,13 @@ public class DefaultController {
 
     private static final String SESSION_SMSCODE_KEY = "SESSION_SMS_CODE";
 
-    @GetMapping("/system/verifycode.html")
+    /**
+     * 获取图形验证码
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping("/code/image")
     public void verifyImageCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ImageCode imageCode = new ImageUtils().createImageCode(6,
                 120,
@@ -50,7 +55,11 @@ public class DefaultController {
         ImageIO.write(imageCode.getImage(),"JPEG",response.getOutputStream());
     }
 
-    @GetMapping("/getsmscode")
+    /**
+     * 获取短信验证码
+     * @param request
+     */
+    @GetMapping("/code/sms")
     public void getSmsCode(HttpServletRequest request){
         logger.info("获得短信验证码");
         sessionStrategy.setAttribute(new ServletWebRequest(request),SESSION_SMSCODE_KEY,null);
